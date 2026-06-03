@@ -1,5 +1,3 @@
-import {useContext} from "react";
-import {SWContext} from "../utils/context.ts";
 import Button from "./ui/Button.tsx";
 
 interface NavItemProps {
@@ -7,9 +5,12 @@ interface NavItemProps {
 }
 
 const NavItem = ({itemTitle}: NavItemProps) => {
-    const {changePage} = useContext(SWContext);
 
-    return <Button callback={() => changePage(itemTitle)}>{itemTitle}</Button>
+    return (
+        <a href={`/${itemTitle.toLowerCase()}`}>
+            <Button>{itemTitle}</Button>
+        </a>
+    )
 }
 
 export default NavItem;
