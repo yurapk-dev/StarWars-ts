@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {baseUrl} from "../utils/constants.ts";
+import Text from "./ul/Text.tsx";
 
 const OpeningCrawl = () => {
     const [openingCrawl, setOpeningCrawl] = useState(() => sessionStorage.getItem('opening_crawl'));
@@ -18,19 +19,7 @@ const OpeningCrawl = () => {
         return () => console.log('Opening crawl was unmounted');
     }, []);
 
-    if (openingCrawl) {
-        return (
-            <p className="text-justify text-3xl leading-normal tracking-widest">
-                {openingCrawl}
-            </p>
-        )
-    } else {
-        return (
-            <p className="text-justify text-3xl leading-normal tracking-widest">
-                Loading ...
-            </p>
-        )
-    }
+    return <Text>{openingCrawl || 'Loading...'}</Text>
 }
 
 export default OpeningCrawl;
