@@ -1,4 +1,5 @@
 import Button from "./ui/Button.tsx";
+import {NavLink} from "react-router";
 
 interface NavItemProps {
     itemTitle: string;
@@ -7,9 +8,9 @@ interface NavItemProps {
 const NavItem = ({itemTitle}: NavItemProps) => {
 
     return (
-        <a href={`/${itemTitle.toLowerCase()}`}>
+        <NavLink to={`/${itemTitle.toLowerCase()}`}>
             <Button>{itemTitle}</Button>
-        </a>
+        </NavLink>
     )
 }
 
