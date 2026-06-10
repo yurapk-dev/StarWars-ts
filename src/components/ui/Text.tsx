@@ -1,6 +1,6 @@
-const Text = ({children}: { children: string }) => {
+const Text = ({children, className}: { children: string, className:string }) => {
     return (
-        <p className="text-justify text-3xl leading-normal tracking-widest">
+        <p className={`"text-3xl leading-normal tracking-widest ${className ?? 'text-justify'}`}>
             {children}
         </p>
     )

@@ -18,7 +18,7 @@ const OpeningCrawl = () => {
         }
     }, []);
 
-    return <Text>{openingCrawl || 'Loading...'}</Text>
+    return <Text className="text-center">{openingCrawl || 'Loading...'}</Text>
 
 }
 
